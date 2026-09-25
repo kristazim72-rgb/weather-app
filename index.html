@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Weather Forecast</h1>
+      
+      <form id="search-form" class="search-form">
+        <input 
+          type="text" 
+          id="location-input" 
+          placeholder="Enter city (e.g. London, Tokyo)..." 
+          required 
+          autocomplete="off"
+        >
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+    </header>
+
+    <main class="main-content">
+      <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Fetching weather data...</p>
+      </div>
+
+      <div id="error-message" class="error-message hidden"></div>
+
+      <article id="weather-card" class="weather-card hidden">
+        <div class="card-header">
+          <div>
+            <h2 id="location-name">City, Country</h2>
+            <p id="condition" class="condition-text">Sunny</p>
+          </div>
+       
+          <button id="unit-toggle" class="unit-toggle" aria-label="Toggle temperature unit">
+            Display in °F
+          </button>
+        </div>
+
+        <div class="card-body">
+          <div class="temp-display">
+            <span id="temperature" class="temp-value">--</span>
+          </div>
+
+          <div class="weather-details">
+            <div class="detail-item">
+              <span class="detail-label">Humidity</span>
+              <span id="humidity" class="detail-value">--%</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Wind Speed</span>
+              <span id="wind-speed" class="detail-value">-- mph</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
